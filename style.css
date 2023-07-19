@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif; /* Altera a fonte pra "Noto Sans" como padrão, caso contrário usa a "Sans-Serif" */ 
+}
+
+body * {
+    box-sizing: border-box;
+} /* O asterisco significa que as alterações de estilo vão servir para todos os elementos do body */
+
+.main-login{
+    width: 100vw;
+    height: 100vh;
+    background: #201b2c;
+    display: flex; /* Organiza os objetos lado a lado */
+    justify-content: center; /* Organiza os objetos no meio do eixo X */
+    align-items: center; /* Organiza os objetos no meio do eixo Y */
+}
+
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-login > h1{
+    font-size: 3vw;
+    color: #77ffc0;
+}
+
+.left-login > img{
+    width: 35vw;
+}
+
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.card-login{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px; /* Margens internas de, respectivamente, Y e X */
+    background: #2f2841;
+    border-radius: 20px; /* Arredonda as extremidades da área do objeto */
+    box-shadow: 0px 10px 40px #00000056; /* Efeito de sombra da área marcada do objeto */
+                                           /* Primeiro valor: sombra voltada pra esquerda ("-") ou direita ("+") do eixo X */
+                                           /* Segundo valor: sombra voltada pra cima ("-") ou baixo ("+") do eixo Y */
+                                           /* Terceiro valor: blur da sombra */
+                                           /* último valor: cor da sombra */
+}
+
+.card-login > h1{
+    color: #00ff88;
+    font-weight: 800; /* Espessura da fonte */
+    margin: 0;
+}
+
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Com o "flex-direction" esse estilo se refere ao eixo Y */
+    align-items: flex-start;  /* Com o "flex-direction" esse estilo se refere ao eixo X */
+    margin: 10px 0px; /* Respectivamente eixo Y e eixo X */
+}
+
+.textfield > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none; /* Destaque visual no objeto clicado pelo usuário */
+    box-sizing: border-box; /* Limita a caixa do input segundo as margens do card-login */
+}
+
+.textfield > label{
+    color: #f0ffffde;
+    margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+.textfield > input::placeholder{
+    color: #f0ffff94;
+}
+
+.btn-login{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase; /* Modifica o texto interno para letras maiúsculas */
+    font-weight: 800;
+    letter-spacing: 3px; /* Altera o espaçamento entre os caracteres */
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer; /* Altera o cursor por cima do botão */
+    box-shadow: 0px 10px 40px -12px #00ff8052; /* Quarto valor: Controla se a sombra se expande com maior intensidade ("+") ou se ela encolhe diminuindo o brilho ("-") */
+}
+
+@media only screen and (max-width: 950px){
+    .card-login{
+        width: 85%
+    }
+} /* Enquanto a tela for de 950px adicione os elementos citados */
+
+@media only screen and (max-width: 600px){
+    .main-login{
+        flex-direction: column;
+    }
+    .left-login > h1{
+        display: none;
+    }
+    .left-login{
+        width: 100%;
+        height:auto;
+    }
+    .left-login-image{
+        width: 50vw;
+    }
+    .right-login{
+        width: 100%;
+        height: auto;
+    }
+    .card-login{
+        width: 90%;
+    }
+}
