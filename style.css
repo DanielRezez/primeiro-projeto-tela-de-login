@@ -2,7 +2,9 @@
 
 body{
     margin: 0;
-    font-family: 'Noto Sans', sans-serif; /* Altera a fonte pra "Noto Sans" como padrão, caso contrário usa a "Sans-Serif" */ 
+    font-family: 'Noto Sans', sans-serif; /* Altera a fonte pra "Noto Sans" como padrão, caso contrário usa a "Sans-Serif" */
+    width: 100vw;
+    height: 100vh;
 }
 
 body * {
@@ -11,11 +13,12 @@ body * {
 
 .main-login{
     width: 100vw;
-    height: 100vh;
+    height: auto;
     background: #201b2c;
     display: flex; /* Organiza os objetos lado a lado */
     justify-content: center; /* Organiza os objetos no meio do eixo X */
     align-items: center; /* Organiza os objetos no meio do eixo Y */
+    overflow: scroll;
 }
 
 .left-login{
@@ -28,12 +31,12 @@ body * {
 }
 
 .left-login > h1{
-    font-size: 3vw;
+    font-size: 42px;
     color: #77ffc0;
 }
 
 .left-login > img{
-    width: 35vw;
+    width: 70%;
 }
 
 .right-login{
@@ -45,7 +48,7 @@ body * {
 }
 
 .card-login{
-    width: 60%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,30 +117,85 @@ body * {
 }
 
 @media only screen and (max-width: 950px){
+    .main-login {
+        width: 100vw;
+        height: auto;
+    }
+    
+    .left-login h1 {
+        width: 80%;
+        font-size: 36px;
+        text-align: left;
+    }
+
+    .left-login img {
+        width: 80%;
+    }
+
     .card-login{
         width: 85%
     }
 } /* Enquanto a tela for de 950px adicione os elementos citados */
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
     .main-login{
+        display: flex;
         flex-direction: column;
+        padding: 20px 5px 50px 5px;
+        height: auto;
     }
-    .left-login > h1{
-        display: none;
-    }
+
     .left-login{
         width: 100%;
-        height:auto;
+        height: auto;
     }
-    .left-login-image{
-        width: 50vw;
+
+    .left-login > h1{
+        width: 90%;
+        text-align: center;
+        font-size: 28px;
     }
+
+    .left-login img {
+        width: 70%;
+        margin-bottom: 30px;
+    }
+
     .right-login{
         width: 100%;
         height: auto;
     }
     .card-login{
         width: 90%;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .main-login {
+        display: flex;
+        width: 100vw;
+        height: auto;
+        padding: 50px 20px;
+    }
+    
+    .left-login {
+        width: 50vw;
+        height: auto;
+    }
+
+    .left-login h1 {
+        width: 100%;
+        text-align: left;
+    }
+
+    .left-login img {
+        display: flex;
+        width: 75%;
+        align-self: center;
+    }
+
+    .right-login {
+        width: 50vw;
+        height: auto;
     }
 }
